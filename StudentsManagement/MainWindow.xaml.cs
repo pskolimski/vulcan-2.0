@@ -139,5 +139,10 @@ namespace StudentsManagement
             this.DataContext = activeStudent;
             GradesList.ItemsSource = activeStudent.Grades;
         }
+
+        private void Add_Student_Button_Clicked(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("Ta opcja nie jest dostępna w tej wersji!\nDo zobaczenia w wersji drugiej ;)");
+        }
     }
 }
