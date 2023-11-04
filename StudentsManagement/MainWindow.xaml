@@ -1,0 +1,112 @@
+﻿<Window x:Class="StudentsManagement.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:StudentsManagement"
+        mc:Ignorable="d"
+        Title="Vulcan 2.0 by Patryk Skolimowski" Height="750" Width="1000" Background="#FFE3EAED" ResizeMode="NoResize"   >
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="250" />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+
+        <StackPanel x:Name="SideBar" Width="250" Grid.Column="0" Background="#1a1a1a" Height="750">
+            <StackPanel Margin="25">
+                <Label Grid.Column="0" Content="VULCAN 2.0" FontWeight="Bold" FontSize="25" VerticalAlignment="Center" Foreground="White" />
+                <Label Name="StudentsCount" Content="W systemie 0 uczniów" Foreground="White" />
+            </StackPanel>
+
+            <StackPanel Margin="25">
+                <Label Content="Lista uczniów" Foreground="CornflowerBlue" Padding="10" FontWeight="SemiBold" FontSize="18" />
+                <ListBox x:Name="StudentsList" Background="Transparent" BorderBrush="Transparent" ScrollViewer.CanContentScroll="True" ScrollViewer.VerticalScrollBarVisibility="Hidden" Height="480" />
+            </StackPanel>
+        </StackPanel>
+
+        <Grid Grid.Column="1" Background="#ebebeb">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="75" />
+                <RowDefinition Height="290" />
+                <RowDefinition Height="50" />
+                <RowDefinition />
+            </Grid.RowDefinitions>
+            <DockPanel VerticalAlignment="Center" HorizontalAlignment="Right">
+                <Button Click="LoadFromFile_Clicked" Style="{StaticResource Button}">Wczytaj dane</Button>
+                <Button Click="ExportToFile_Clicked" Style="{StaticResource Button}">Eksportuj</Button>
+                <Button Style="{StaticResource Button}" Margin="1,1,10,1">Dodaj ucznia</Button>
+            </DockPanel>
+
+            <Border Background="#FFC3C3C3" Padding="30" Grid.Row="1" CornerRadius="10" Margin="30">
+                <DockPanel HorizontalAlignment="Left" VerticalAlignment="Center">
+                    <Image Source="{Binding Avatar}" Width="200" />
+                    <StackPanel Margin="15,0,0,0">
+                        <StackPanel VerticalAlignment="Center">
+                            <Label Content="{Binding FullName}" FontSize="22" FontWeight="Bold"  />
+                        </StackPanel>
+                        <Grid Margin="0, 8, 0, 0">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="150" />
+                                <ColumnDefinition Width="150"  />
+                            </Grid.ColumnDefinitions>
+
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="60" />
+                                <RowDefinition Height="60" />
+                            </Grid.RowDefinitions>
+
+                            <StackPanel VerticalAlignment="Center" Grid.Column="0" Grid.Row="0">
+                                <Label Style="{StaticResource DataLabel}" Content="Data urodzenia" />
+                                <Label x:Name="DateOfBirthLabel" Content="{Binding DateOfBirthString}" />
+                            </StackPanel>
+
+                            <StackPanel VerticalAlignment="Center" Grid.Column="1" Grid.Row="0">
+                                <Label Style="{StaticResource DataLabel}" Content="PESEL" />
+                                <Label x:Name="PeselLabel" Content="{Binding Pesel}" />
+                            </StackPanel>
+
+                            <StackPanel VerticalAlignment="Center" Grid.Column="0" Grid.Row="1">
+                                <Label Style="{StaticResource DataLabel}" Content="Klasa" />
+                                <Label x:Name="ClassLabel" Content="{Binding Class}" />
+                            </StackPanel>
+
+                            <StackPanel VerticalAlignment="Center" Grid.Column="1" Grid.Row="1">
+                                <Label Style="{StaticResource DataLabel}" Content="Semestr" />
+                                <Label x:Name="SemesterLabel" Content="{Binding Semester}" />
+                            </StackPanel>
+
+                        </Grid>
+                    </StackPanel>
+                </DockPanel>
+            </Border>
+
+            <DockPanel Grid.Row="2" HorizontalAlignment="Center" VerticalAlignment="Center">
+                <Button Style="{StaticResource Button}" Content="&lt;  Poprzedni uczeń" Click="Previous_Person_Button_Clicked" />
+                <Button Style="{StaticResource Button}" Content="Następny uczeń  >" Click="Next_Person_Button_Clicked" />
+            </DockPanel>
+
+            <Border Grid.Row="3" Padding="30, 0, 30, 0">
+                <StackPanel>
+                    <Label Content="Oceny" FontSize="25" FontWeight="Bold" />
+                    <DockPanel VerticalAlignment="Center">
+                        <Label Style="{StaticResource DataLabel}" Content="Średnia ocen:" />
+                        <Label Content="{Binding Average}" />
+                    </DockPanel>
+                    
+                    <ItemsControl Name="GradesList" Margin="0, 15, 0, 0">
+                        <ItemsControl.ItemsPanel>
+                            <ItemsPanelTemplate>
+                                <StackPanel Orientation="Horizontal" />
+                            </ItemsPanelTemplate>
+                        </ItemsControl.ItemsPanel>
+                        <ItemsControl.ItemTemplate>
+                            <DataTemplate>
+                                <TextBlock Style="{StaticResource Grade}" Text="{Binding}"/>
+                            </DataTemplate>
+                        </ItemsControl.ItemTemplate>
+                    </ItemsControl>
+                </StackPanel>
+            </Border>
+        </Grid>
+    </Grid>
+</Window>
