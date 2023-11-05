@@ -1,0 +1,152 @@
+[
+  {
+    "Semester": 4,
+    "Class": "3A",
+    "Grades": [5, 4, 3, 5, 4],
+    "Average": 4.2,
+    "FirstName": "Jan",
+    "LastName": "Kowalski",
+    "Pesel": "71083194676",
+    "Image": "assets/m1.jpg"
+  },
+  {
+    "Semester": 3,
+    "Class": "2B",
+    "Grades": [4, 4, 5, 4, 4],
+    "Average": 4.2,
+    "FirstName": "Anna",
+    "LastName": "Nowak",
+    "Pesel": "48110839734",
+    "Image": "assets/fem1.jpg"
+  },
+  {
+    "Semester": 5,
+    "Class": "4C",
+    "Grades": [5, 4, 3, 5, 4],
+    "Average": 4.2,
+    "FirstName": "Marek",
+    "LastName": "Wiśniewski",
+    "Pesel": "82080399254",
+    "Image": "assets/m2.jpg"
+  },
+  {
+    "Semester": 2,
+    "Class": "1A",
+    "Grades": [3, 4, 4, 4, 5],
+    "Average": 4.0,
+    "FirstName": "Ewa",
+    "LastName": "Lewandowska",
+    "Pesel": "81092179416",
+    "Image": "assets/fem2.jpg"
+  },
+  {
+    "Semester": 4,
+    "Class": "3B",
+    "Grades": [4, 4, 3, 4, 4],
+    "Average": 3.8,
+    "FirstName": "Piotr",
+    "LastName": "Dąbrowski",
+    "Pesel": "02272923861",
+    "Image": "assets/m3.jpg"
+  },
+  {
+    "Semester": 3,
+    "Class": "2A",
+    "Grades": [3, 4, 5, 4, 3],
+    "Average": 3.8,
+    "FirstName": "Magdalena",
+    "LastName": "Kaczmarek",
+    "Pesel": "07220542334",
+    "Image": "assets/fem3.jpg"
+  },
+  {
+    "Semester": 6,
+    "Class": "5C",
+    "Grades": [5, 4, 5, 4, 3],
+    "Average": 4.2,
+    "FirstName": "Tomasz",
+    "LastName": "Wójcik",
+    "Pesel": "80040632252",
+    "Image": "assets/m4.jpg"
+  },
+  {
+    "Semester": 3,
+    "Class": "2C",
+    "Grades": [4, 5, 4, 4, 4],
+    "Average": 4.2,
+    "FirstName": "Iwona",
+    "LastName": "Zielińska",
+    "Pesel": "84071169451",
+    "Image": "assets/fem4.jpg"
+  },
+  {
+    "Semester": 5,
+    "Class": "4B",
+    "Grades": [5, 4, 3, 4, 5],
+    "Average": 4.2,
+    "FirstName": "Krzysztof",
+    "LastName": "Szymański",
+    "Pesel": "65052537881",
+    "Image": "assets/m5.jpg"
+  },
+  {
+    "Semester": 2,
+    "Class": "1B",
+    "Grades": [3, 4, 4, 4, 5],
+    "Average": 4.0,
+    "FirstName": "Alicja",
+    "LastName": "Woźniak",
+    "Pesel": "63082965465",
+    "Image": "assets/fem5.jpg"
+  },
+  {
+    "Semester": 2,
+    "Class": "3TEP",
+    "Grades": [3, 2, 5, 1, 6],
+    "Average": 3.4,
+    "FirstName": "Maciej",
+    "LastName": "Musiał",
+    "Pesel": "98122444516",
+    "Image": "assets/m6.jpg"
+  },
+  {
+    "Semester": 3,
+    "Class": "2TEP",
+    "Grades": [1, 2, 3, 4, 5, 6],
+    "Average": 3.5,
+    "FirstName": "Krzysztof",
+    "LastName": "Zaborowski",
+    "Pesel": "79012639517",
+    "Image": "assets/m7.jpg"
+  },
+  {
+    "Semester": 3,
+    "Class": "3TM",
+    "Grades": [1, 2, 3, 4, 5, 6],
+    "Average": 3.5,
+    "FirstName": "Krzysztof",
+    "LastName": "Kosmalski",
+    "Pesel": "79051947378",
+    "Image": "assets/m8.jpg"
+  },
+  {
+    "Semester": 6,
+    "Class": "2TEP",
+    "Grades": [1, 5, 2, 5, 6],
+    "Average": 3.8,
+    "FirstName": "Krzysztof",
+    "LastName": "Ratajski",
+    "Pesel": "83081444271",
+    "Image": "assets/m9.jpg"
+  },
+  {
+    "Semester": 4,
+    "Class": "2TM",
+    "Grades": [1, 2, 4, 5, 6, 3],
+    "Average": 3.5,
+    "FirstName": "Władysław",
+    "LastName": "Jagiełło",
+    "Pesel": "06312429331",
+    "Image": "assets/m10.jpg"
+  }
+]

@@ -38,14 +38,22 @@ namespace StudentsManagement
             this.Class = studentsClass;
             this.Pesel = pesel;
             this.DateOfBirth = GetDateOfBirth();
-            this.Average = ShowGradesAverage();
+            this.Average = GetStudentAverage();
             this.Grades = grades;
             this.Image = image;
             this.Avatar = new BitmapImage(new Uri($"{image}", UriKind.RelativeOrAbsolute));
         }
 
 
-
+        /* 
+           **********************************************
+            nazwa funkcji: GetDateOfBirth
+            opis funkcji: Zwraca datę urodzenia na podstawie numeru PESEL.
+            parametry: brak
+            zwracany typ i opis: DateTime - data urodzenia
+            autor: Patryk Skolimowski
+           ***********************************************
+        */
         private DateTime GetDateOfBirth()
         {
             string rr = this.Pesel.Substring(0, 2);
@@ -89,40 +97,16 @@ namespace StudentsManagement
             return new DateTime(year, monthInt, day);
         }
 
-        /* 
-            **********************************************
-            nazwa funkcji: ShowGrades
-            opis funkcji: Wyświetla na ekranie listę ocen ucznia.
-            parametry: brak
-            zwracany typ i opis: void
-            autor: Patryk Skolimowski
-            ***********************************************
-         */
-        public void ShowGrades()
-        {
-            if (Grades.Count == 0)
-            {
-                Console.WriteLine("Ten uczeń nie ma żadnych ocen!");
-            }
-            else
-            {
-                Console.Write("Lista ocen: ");
-                string gradesString = String.Join(",", Grades);
-
-                Console.WriteLine($"{gradesString}");
-            }
-        }
-
         /*
             **********************************************
-            nazwa funkcji: ShowGradesAverage
-            opis funkcji: Wyświetla średnią ocen ucznia.
+            nazwa funkcji: GetStudentAverage
+            opis funkcji: Zwraca średnią ocen ucznia.
             parametry: brak
-            zwracany typ i opis: void
+            zwracany typ i opis: double - średnia ocen ucznia
             autor: Patryk Skolimowski
             ***********************************************
          */
-        public double ShowGradesAverage()
+        public double GetStudentAverage()
         {
             double sum = 0;
 
@@ -132,7 +116,6 @@ namespace StudentsManagement
             }
 
             double average = Math.Round(sum / Grades.Count, 2);
-            Console.WriteLine($"Średnia ocen: {average}");
 
             return average;
         }
@@ -149,27 +132,6 @@ namespace StudentsManagement
         public void AddGrade(int grade)
         {
             Grades.Add(grade);
-        }
-
-        /*
-            **********************************************
-            nazwa funkcji: DisplayStudentInfo
-            opis funkcji: Wypisuje na ekran wszystkie dane ucznia.
-            parametry: grade - ocena, która ma zostać dodana
-            zwracany typ i opis: void
-            autor: Patryk Skolimowski
-            ***********************************************
-         */
-        public void DisplayStudentInfo()
-        {
-            Console.WriteLine($"\nImie i nazwisko: {this.FirstName} {this.LastName}");
-            Console.WriteLine($"Klasa: {this.Class}");
-            Console.WriteLine($"Data urodzenia: {this.DateOfBirth.ToShortDateString()}");
-
-            this.ShowGrades();
-            this.ShowGradesAverage();
-
-            Console.WriteLine();
         }
     }
 }

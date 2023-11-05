@@ -91,36 +91,36 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Resource Include="OpenSans.ttf" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
+    <None Include="Students.json" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="assets\julita.jpg" />
-    <Resource Include="assets\rysiu.jpg" />
+    <Resource Include="assets\fem1.jpg" />
+    <Resource Include="assets\fem2.jpg" />
+    <Resource Include="assets\fem3.jpg" />
+    <Resource Include="assets\fem4.jpg" />
+    <Resource Include="assets\fem5.jpg" />
+    <Resource Include="assets\fem6.jpg" />
+    <Resource Include="assets\fem7.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="assets\img1.jpg" />
-    <Resource Include="assets\img10.jpg" />
-    <Resource Include="assets\img11.jpg" />
-    <Resource Include="assets\img12.jpg" />
-    <Resource Include="assets\img13.jpg" />
-    <Resource Include="assets\img14.jpg" />
-    <Resource Include="assets\img15.jpg" />
-    <Resource Include="assets\img2.jpg" />
-    <Resource Include="assets\img3.jpg" />
-    <Resource Include="assets\img4.jpg" />
-    <Resource Include="assets\img6.jpg" />
-    <Resource Include="assets\img7.jpg" />
-    <Resource Include="assets\img8.jpg" />
-    <Resource Include="assets\img9.jpg" />
-    <Resource Include="assets\imt5.jpg" />
+    <Resource Include="assets\m1.jpg" />
+    <Resource Include="assets\m10.jpg" />
+    <Resource Include="assets\m2.jpg" />
+    <Resource Include="assets\m3.jpg" />
+    <Resource Include="assets\m4.jpg" />
+    <Resource Include="assets\m5.jpg" />
+    <Resource Include="assets\m6.jpg" />
+    <Resource Include="assets\m7.jpg" />
+    <Resource Include="assets\m8.jpg" />
+    <Resource Include="assets\m9.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

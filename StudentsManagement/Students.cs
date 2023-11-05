@@ -12,12 +12,31 @@ namespace StudentsManagement
     {
         static public List<Student> students { get; set; } = new List<Student>();
 
+        /*
+            **********************************************
+            nazwa funkcji: GetStudentsFromFile
+            opis funkcji: Wczytuje uczniów z pliku JSON.
+            parametry: filePath - ścieżka do pliku JSON
+            zwracany typ i opis: void
+            autor: Patryk Skolimowski
+            ***********************************************
+         */
         public static void GetStudentsFromFile(string filePath)
         {
             var json = File.ReadAllText(filePath);
             students = JsonConvert.DeserializeObject<List<Student>>(json);
         }
 
+
+        /*
+            **********************************************
+            nazwa funkcji: SaveStudentsToFile
+            opis funkcji: Zapisuje uczniów do pliku JSON.
+            parametry: filePath - ścieżka do pliku JSON
+            zwracany typ i opis: void
+            autor: Patryk Skolimowski
+            ***********************************************
+         */
         public static void SaveStudentsToFile(string filePath)
         {
             var json = JsonConvert.SerializeObject(students);
@@ -41,43 +60,33 @@ namespace StudentsManagement
         /*
             **********************************************
             nazwa funkcji: GetTheBestStudent
-            opis funkcji: Wyświetla najlepszego ucznia.
+            opis funkcji: Zwraca ucznia z najwyższą średnią.
             parametry: brak
-            zwracany typ i opis: void
+            zwracany typ i opis: Student - obiekt ucznia z najwyższą średnią
             autor: Patryk Skolimowski
             ***********************************************
          */
-        static public void GetTheBestStudent()
+        static public Student GetTheBestStudent()
         {
-            var sortedStudents = students.OrderByDescending(s => s.ShowGradesAverage()).ToList();
+            var sortedStudents = students.OrderByDescending(s => s.GetStudentAverage()).ToList();
 
-            Console.WriteLine("\n\nNAJLEPSZY UCZEŃ");
-            sortedStudents[0].DisplayStudentInfo();
+            return sortedStudents[0];
         }
 
         /*
             **********************************************
             nazwa funkcji: GetTheWorstStudent
-            opis funkcji: Wyświetl najsłabszego ucznia z listy.
+            opis funkcji: Zwraca ucznia z najniższą średnią.
             parametry: brak
-            zwracany typ i opis: void
+            zwracany typ i opis: Student - obiekt ucznia z najniższą średnią
             autor: Patryk Skolimowski
             ***********************************************
          */
-        static public void GetTheWorstStudent()
+        static public Student GetTheWorstStudent()
         {
-            var sortedStudents = students.OrderBy(s => s.ShowGradesAverage()).ToList();
+            var sortedStudents = students.OrderBy(s => s.GetStudentAverage()).ToList();
 
-            Console.WriteLine("\n\nNAJSŁABSZY UCZEŃ");
-            sortedStudents[0].DisplayStudentInfo();
-        }
-
-        static public void DisplayAllStudents()
-        {
-            foreach (var student in students)
-            {
-                student.DisplayStudentInfo();
-            }
+            return sortedStudents[0];
         }
     }
 
