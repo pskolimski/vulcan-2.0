@@ -144,5 +144,11 @@ namespace StudentsManagement
         {
             MessageBox.Show("Ta opcja nie jest dostępna w tej wersji!\nDo zobaczenia w wersji drugiej ;)");
         }
+
+        private void Students_List_Clicked(object sender, RoutedEventArgs e)
+        {
+            StudentsList list = new StudentsList();
+            list.Show();
+        }
     }
 }

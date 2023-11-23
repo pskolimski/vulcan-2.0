@@ -34,7 +34,9 @@
             <DockPanel VerticalAlignment="Center" HorizontalAlignment="Right">
                 <Button Click="LoadFromFile_Clicked" Style="{StaticResource Button}">Wczytaj dane</Button>
                 <Button Click="ExportToFile_Clicked" Style="{StaticResource Button}">Eksportuj</Button>
+                <Button Style="{StaticResource Button}" Click="Students_List_Clicked">Lista uczniów</Button>
                 <Button Style="{StaticResource Button}" Margin="1,1,10,1" Click="Add_Student_Button_Clicked">Dodaj ucznia</Button>
+
             </DockPanel>
 
             <Border Background="#FFC3C3C3" Padding="30" Grid.Row="1" CornerRadius="10" Margin="30">
@@ -74,7 +76,6 @@
                                 <Label Style="{StaticResource DataLabel}" Content="Semestr" />
                                 <Label x:Name="SemesterLabel" Content="{Binding Semester}" />
                             </StackPanel>
-
                         </Grid>
                     </StackPanel>
                 </DockPanel>

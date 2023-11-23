@@ -11,6 +11,9 @@ namespace StudentsManagement
     internal static class Students
     {
         static public List<Student> students { get; set; } = new List<Student>();
+        static public Student TheBestStudent { get; set; }
+        static public Student TheWorstStudent { get; set; } 
+
 
         /*
             **********************************************
@@ -25,6 +28,9 @@ namespace StudentsManagement
         {
             var json = File.ReadAllText(filePath);
             students = JsonConvert.DeserializeObject<List<Student>>(json);
+
+            TheBestStudent = GetTheBestStudent();
+            TheWorstStudent = GetTheWorstStudent();
         }
 
 
@@ -68,7 +74,12 @@ namespace StudentsManagement
          */
         static public Student GetTheBestStudent()
         {
-            var sortedStudents = students.OrderByDescending(s => s.GetStudentAverage()).ToList();
+            var sortedStudents = students.OrderByDescending(s => s.Average).ToList();
+            var theBestStudents = sortedStudents.FindAll(student => student.Average == sortedStudents[0].Average);
+            theBestStudents.ForEach(student =>
+            {
+                student.AdditionalInfo = "Najlepszy uczeń";
+            });
 
             return sortedStudents[0];
         }
@@ -84,7 +95,12 @@ namespace StudentsManagement
          */
         static public Student GetTheWorstStudent()
         {
-            var sortedStudents = students.OrderBy(s => s.GetStudentAverage()).ToList();
+            var sortedStudents = students.OrderBy(s => s.Average).ToList();
+            var theWorstStudents = sortedStudents.FindAll(student => student.Average == sortedStudents[0].Average);
+            theWorstStudents.ForEach(student =>
+            {
+                student.AdditionalInfo = "Najgorszy uczeń";
+            });
 
             return sortedStudents[0];
         }

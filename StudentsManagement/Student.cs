@@ -29,6 +29,7 @@ namespace StudentsManagement
         public double Average { get; set; }
         public string Image { get; set; }
         public BitmapImage Avatar { protected get; set; }
+        public string AdditionalInfo { get; set; }
 
         public Student(string firstName, string lastName, string studentsClass, string pesel, List<int> grades, int semester, string image)
         {
@@ -133,5 +134,7 @@ namespace StudentsManagement
         {
             Grades.Add(grade);
         }
+
+
     }
 }
